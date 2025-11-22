@@ -1,0 +1,11 @@
+name: raif-apm-workflows
+version: 1.0.0
+description: RAIF APM workflows and coding standards
+author: serhii makarenko
+
+scripts:
+  write-unit-tests: "copilot --log-level all --log-dir copilot-logs --allow-all-tools -p java-unit-test-workflow.prompt.md"
+
+dependencies:
+  apm:
+    - danielmeppiel/design-guidelines  # Accessibility rules + UI review workflows
