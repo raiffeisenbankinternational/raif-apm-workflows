@@ -1,0 +1,10 @@
+name: push-staging
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  check-for-changes:
+    uses: raiffeisen-group-open-source/rbi-opensource-actions/.github/workflows/changes.yml@master
+

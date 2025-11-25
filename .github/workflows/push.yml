@@ -1,0 +1,16 @@
+name: push-public
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  check-for-changes:
+    uses: raiffeisen-group-open-source/rbi-opensource-actions/.github/workflows/changes.yml@master
+
+  push: 
+    needs: check-for-changes
+    uses: raiffeisen-group-open-source/rbi-opensource-actions/.github/workflows/push.yml@master
+    secrets:
+      PUBLIC_TOKEN: ${{ secrets.PUBLIC_TOKEN }}
+      PUBLIC_USERNAME: ${{ secrets.PUBLIC_USERNAME }}
